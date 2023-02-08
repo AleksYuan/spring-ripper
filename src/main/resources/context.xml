@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="quoters.bfpp.DeprecationHandlerBeanFactoryPostProcessor"/>
+    <bean class="quoters.bpp.InjectRandomIntAnnotationBeanPostProcessor"/>
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+<!--    это надо добавить что бы спринг увидел аннтацию постконстракт в методе инит терминатора
+        можно добавить нэйм спэйс который тянет за собой комонанотэйшин
+        context:annotation-config
+        context:component-scan
+        -->
+    <bean class="quoters.cl.PostProxyInvokerContextListener"/>
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+    <bean class="quoters.bpp.ProfilingHandlerBeanPostProcessor"/>
+
+    <bean class="quoters.TerminatorQuoter" id="terminatorQuoter">
+        <property name="message" value="I'll be back"/>
+    </bean>
+</beans>
