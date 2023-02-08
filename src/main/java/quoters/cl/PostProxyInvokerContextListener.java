@@ -10,6 +10,14 @@ import quoters.annots.PostProxy;
 
 import java.lang.reflect.Method;
 
+/* Пишем свой лисенер
+ * этот лисенер имплементит интерфейс с дженериком событие обновления бина в контексте
+ * то есть когда происходит его обновление то вызывается также этот лисенер
+ *
+ * он проверяет все методы бина который рефрешнулся и если у метода имеется метод с аннотацией постпрокси
+ * то этот метод выполняется
+ */
+
 public class PostProxyInvokerContextListener implements ApplicationListener<ContextRefreshedEvent> {
 
     @Autowired

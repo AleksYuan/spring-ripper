@@ -6,6 +6,11 @@ import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import quoters.annots.DeprecatedClass;
 
+
+/*
+ * меняем класс на новый если стоит аннотация.
+ * БФПП работает до бин пост процессоров, он помогает подкрутить бин фактори
+ */
 public class DeprecationHandlerBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {

@@ -8,7 +8,7 @@ import quoters.annots.Profiling;
 import javax.annotation.PostConstruct;
 
 @Profiling
-        // подменяем в обьект терминатора на т100 в бинфакторипостпроцессор
+// подменяем в обьект терминатора на т100 в бинфакторипостпроцессор
 @DeprecatedClass(newImpl = T1000.class)
 public class TerminatorQuoter implements Quoter {
 

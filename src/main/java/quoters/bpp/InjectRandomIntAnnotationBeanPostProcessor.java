@@ -28,8 +28,8 @@ public class InjectRandomIntAnnotationBeanPostProcessor implements BeanPostProce
     }
 
     /* Вызывается после инит метода
-     * Те БПП которые что то меняют в классе они должны это делать на моменте bppAI
-     *
+     * Те БПП которые что то меняют в классе должны это делать на моменте bppAI
+     * т.к до этого менять не чего. До постконстракт или до инит ничего еще не проиницилизировалось
      */
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {

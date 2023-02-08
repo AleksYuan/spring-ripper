@@ -4,7 +4,7 @@ import quoters.annots.InjectRandomInt;
 
 /*
  * Если не имплементировать интерфейс то метод не отработает как прописано в мэйне,
- * потому что мы вызываем метод
+ * потому что мы вызываем метод инфоке делаем по интерфейсу, а динамик прокси не видит связи
  */
 public class T1000 extends TerminatorQuoter implements Quoter{
 

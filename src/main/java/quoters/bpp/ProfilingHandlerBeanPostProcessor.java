@@ -19,8 +19,11 @@ public class ProfilingHandlerBeanPostProcessor  implements BeanPostProcessor {
     private Map<String, Class> map = new HashMap<>();
     private ProfilingController controller = new ProfilingController();
 
-    // при регистрации МБИН сервер может быть много проблем, например мы не
-    // инмплементировали интерфейс или этот бин уже зарегистрирован
+    /* при регистрации МБИН сервер может быть много проблем, например мы не
+     * инмплементировали интерфейс или этот бин уже зарегистрирован
+     *
+     * регистрируем обьект на сервере в конструкторе
+     */
     public ProfilingHandlerBeanPostProcessor() throws Exception {
         MBeanServer platformMBeanServer = ManagementFactory.getPlatformMBeanServer();
         platformMBeanServer.registerMBean(controller, new ObjectName("profiling", "name", "controller"));
@@ -32,10 +35,15 @@ public class ProfilingHandlerBeanPostProcessor  implements BeanPostProcessor {
         if (beanClass.isAnnotationPresent(Profiling.class)) {
             map.put(beanName, beanClass);
         }
-
         return BeanPostProcessor.super.postProcessBeforeInitialization(bean, beanName);
     }
 
+
+    /* генерируем класс на лету
+     * проверяем если наш объект есть в мапе то при условии true в контроллере мы
+     * возвращаем его прокси, такой же обьект только добавляем в него логику через
+     * newProxyInstance
+     */
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
 
