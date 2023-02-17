@@ -7,7 +7,7 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import quoters.annots.DeprecatedClass;
 
 
-/*
+/**
  * меняем класс на новый если стоит аннотация.
  * БФПП работает до бин пост процессоров, он помогает подкрутить бин фактори
  */

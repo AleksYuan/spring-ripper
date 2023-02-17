@@ -8,6 +8,12 @@ import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * что бы написать свой scope надо реализовать интерфейс scope,
+ * реализовать логику и зарегистрировать в контексте
+ * В директории регистраци идет через java config
+ * цвет прототайпа схемы меняется через каждые 5 секунд
+ */
 public class PeriodicalScopeConfigurer implements Scope {
 
     Map<String, Pair<LocalTime, Object>> map = new HashMap<>();

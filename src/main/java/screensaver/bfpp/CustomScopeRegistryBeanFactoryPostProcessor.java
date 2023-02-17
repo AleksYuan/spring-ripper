@@ -9,6 +9,9 @@ import org.springframework.stereotype.Component;
 import screensaver.scope.PeriodicalScopeConfigurer;
 
 
+/**
+ * регистрируем наш скопе в BFPP
+ */
 @Component
 public class CustomScopeRegistryBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     @Override

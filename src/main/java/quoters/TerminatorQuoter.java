@@ -8,7 +8,9 @@ import quoters.annots.Profiling;
 import javax.annotation.PostConstruct;
 
 @Profiling
-// подменяем в обьект терминатора на т100 в бинфакторипостпроцессор
+/** подменяем в обьект терминатора на т100 в бинфакторипостпроцессор
+ * аннотация @depricatedClass
+ */
 //@DeprecatedClass(newImpl = T1000.class)
 public class TerminatorQuoter implements Quoter {
 
@@ -20,13 +22,13 @@ public class TerminatorQuoter implements Quoter {
         this.repeat = repeat;
     }
 
-    /* изначально не работает потому что аннотации нет
+    /** изначально не работает потому что аннотации нет
      * @postconstruct всегда работает на оригинальный метод до того как все прокси накрутились на него
      */
 
     @PostConstruct
     public void init() {
-        /* изначально xml ничего не знает про аннотации
+        /** изначально xml ничего не знает про аннотации
          * знают бинпостпроцессоры, эту аннотуцию обрабатывает коммонаннотэйшинбинпостпроцессор
          */
         System.out.println("PHASE 2 = " + repeat);
@@ -47,7 +49,7 @@ public class TerminatorQuoter implements Quoter {
     }
 
     public TerminatorQuoter() {
-        /* 1. обьект создается java
+        /** 1. обьект создается java
          * спринг просканировал xml -> создал beanDefinition ->
          * спринг понял что нужно создать singleton TerminatorQuater ->
          * при помощи reflection api спринг запусти конструктор терминатора

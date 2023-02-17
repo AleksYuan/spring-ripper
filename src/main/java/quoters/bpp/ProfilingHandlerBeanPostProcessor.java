@@ -19,7 +19,7 @@ public class ProfilingHandlerBeanPostProcessor  implements BeanPostProcessor {
     private Map<String, Class> map = new HashMap<>();
     private ProfilingController controller = new ProfilingController();
 
-    /* при регистрации МБИН сервер может быть много проблем, например мы не
+    /** при регистрации МБИН сервер может быть много проблем, например мы не
      * инмплементировали интерфейс или этот бин уже зарегистрирован поэтому избавляемся прокидываем исключение
      * регистрируем обьект на сервере в конструкторе
      */
@@ -38,7 +38,7 @@ public class ProfilingHandlerBeanPostProcessor  implements BeanPostProcessor {
     }
 
 
-    /* генерируем класс на лету
+    /** генерируем класс на лету
      * проверяем если наш объект есть в мапе то при условии true в контроллере мы
      * возвращаем его прокси, такой же обьект только добавляем в него логику через
      * newProxyInstance
