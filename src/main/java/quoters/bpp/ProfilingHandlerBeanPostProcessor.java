@@ -20,8 +20,7 @@ public class ProfilingHandlerBeanPostProcessor  implements BeanPostProcessor {
     private ProfilingController controller = new ProfilingController();
 
     /* при регистрации МБИН сервер может быть много проблем, например мы не
-     * инмплементировали интерфейс или этот бин уже зарегистрирован
-     *
+     * инмплементировали интерфейс или этот бин уже зарегистрирован поэтому избавляемся прокидываем исключение
      * регистрируем обьект на сервере в конструкторе
      */
     public ProfilingHandlerBeanPostProcessor() throws Exception {

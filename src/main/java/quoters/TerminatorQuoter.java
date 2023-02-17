@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 
 @Profiling
 // подменяем в обьект терминатора на т100 в бинфакторипостпроцессор
-@DeprecatedClass(newImpl = T1000.class)
+//@DeprecatedClass(newImpl = T1000.class)
 public class TerminatorQuoter implements Quoter {
 
     @InjectRandomInt(min = 1, max = 7)

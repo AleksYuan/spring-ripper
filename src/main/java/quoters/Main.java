@@ -18,9 +18,15 @@ public class Main {
 //            context.getBean(Quoter.class).sayQuote();
 //        }
 
-        context.getBean(Quoter.class).sayQuote();
+        context.getBean(Quoter.class);
 
     }
+
+
+
+
 }
+
+
 
 //1. BPP позволяет настроить бины до того как они попали в в ioc container (паттерн chaineOfresponsobility)
